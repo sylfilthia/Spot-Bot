@@ -1,2 +1,4 @@
 # Spot-Bot
-This is the IG bot made by Shando, Wesley, Ian, and Miguel using Selenium in Java.
+////////////////This is an IG Bot Made in Java with Selenium.////////////////
+
+Be sure to drag the "Documents" folder to your Desktop.
