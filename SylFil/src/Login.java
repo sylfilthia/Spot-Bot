@@ -8,10 +8,7 @@ import java.util.Scanner;
 
 public class Login {
 	
-	static StartBrowser startbrowser = new StartBrowser();
-
-	public void AutomaticLogin() throws InterruptedException{
-		@SuppressWarnings("resource")
+	public static void AutomaticLogin() throws InterruptedException{
 		Scanner keyboard = new Scanner(System.in);
 		System.out.println("Enter your username or email: ");
 		String username = keyboard.next();
@@ -19,7 +16,7 @@ public class Login {
 		String password = keyboard.next();
 		
 		//Starting the browser
-		startbrowser.startBrowser();
+		StartBrowser.startBrowser();
 		
 		//Full screens the window
 		StartBrowser.webdriver.manage().window().maximize();
@@ -30,11 +27,10 @@ public class Login {
 		StartBrowser.webdriver.findElement(By.name("password")).sendKeys(password);
 		StartBrowser.webdriver.findElement(By.name("password")).submit();
 		
-		//After successfully logging in
 		Thread.sleep(3000);
 		StartBrowser.webdriver.findElement(By.cssSelector("body > div:nth-child(15) > div > div > div > div.mt3GC > button.aOOlW.HoLwm")).click();
 		System.out.println("/////////You have been logged in/////////");
-		
+			
 	}
 
 }

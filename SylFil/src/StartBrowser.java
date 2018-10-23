@@ -10,8 +10,8 @@ public class StartBrowser {
 	public static WebDriver webdriver;
 	
 		//Starts the browser
-		public void startBrowser(){
-			System.setProperty("webdriver.chrome.driver", "C:\\Users\\student\\Desktop\\Documents\\chromedriver.exe");
+		public static void startBrowser(){
+			System.setProperty("webdriver.chrome.driver", "C:\\Users\\Shandon\\Desktop\\Documents\\chromedriver.exe");
 			webdriver = new ChromeDriver();
 	}
 
