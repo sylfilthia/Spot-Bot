@@ -23,7 +23,6 @@ public class Logout {
 			StartBrowser.webdriver.findElement(By.xpath("//*[@id='react-root']/section/main/div/header/section/div[1]/div/button/span")).click();
 			Thread.sleep(1000);
 			StartBrowser.webdriver.findElement(By.xpath("/html/body/div[3]/div/div/div/div/button[6]")).click();
-			StartBrowser.webdriver.close();
 			System.out.println("////////You have been logged out////////");
 		}else {
 			System.out.println("////////You were not logged out/////////");

@@ -1,11 +1,5 @@
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.remote.RemoteWebDriver;
-
 import java.util.Scanner;
 
 public class Login {
@@ -29,12 +23,11 @@ public class Login {
 		StartBrowser.webdriver.findElement(By.name("username")).sendKeys(username);
 		StartBrowser.webdriver.findElement(By.name("password")).sendKeys(password);
 		StartBrowser.webdriver.findElement(By.name("password")).submit();
-		Thread.sleep(5000);
-		action.keyDown(Keys.CONTROL).keyDown(Keys.SHIFT).sendKeys("i").sendKeys("m").perform();
-		StartBrowser.webdriver.navigate().refresh();
-		
 		Thread.sleep(3000);
-		//StartBrowser.webdriver.findElement(By.cssSelector("body > div:nth-child(12) > div > div > div > div.mt3GC > button.aOOlW.HoLwm")).click();
+		StartBrowser.webdriver.findElement(By.xpath("//*[@id='react-root']/section/main/div/button")).click();
+		Thread.sleep(3000);
+		StartBrowser.webdriver.switchTo().alert().dismiss();
+		
 		
 		System.out.println("/////////You have been logged in/////////");
 			

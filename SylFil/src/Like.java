@@ -17,12 +17,14 @@ public class Like {
 		//Likes (HowMany) amount of posts
 		for (int x = 1; x <= HowMany; x++){
 				Thread.sleep(500);
-				WebElement likebutton = StartBrowser.webdriver.findElement(By.xpath("//*[@id='react-root']/section/main/section/div[1]/div[1]/div/article[" + x + "]/div[2]/section[1]/span[1]/button/span"));
+				
+				WebElement likebutton = StartBrowser.webdriver.findElement(By.cssSelector("span [aria-label='Like']"));
 				String scrollElementIntoMiddle = "var viewPortHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);"
                         + "var elementTop = arguments[0].getBoundingClientRect().top;"
                         + "window.scrollBy(0, elementTop-(viewPortHeight/2));";
 
 				((JavascriptExecutor) StartBrowser.webdriver).executeScript(scrollElementIntoMiddle, likebutton);
+				Thread.sleep(1500);
 				likebutton.click();
 
 			if (x >= HowMany){
