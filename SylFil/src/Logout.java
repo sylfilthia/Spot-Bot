@@ -1,14 +1,12 @@
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 public class Logout {
 
-	public void AutomaticLogout() throws InterruptedException{
+	public static void AutomaticLogout() throws InterruptedException{
+		@SuppressWarnings("resource")
 		Scanner keyboard = new Scanner(System.in);
-		Exit exit = new Exit();
 	
 		//Confirmation message
 		System.out.println("Are you sure you want to logout?");
@@ -19,9 +17,9 @@ public class Logout {
 		if (yesorno.equals("yes") || yesorno.equals("Yes") || yesorno.equals("yes.") || yesorno.equals("Yes.")){
 			//Full screens the window
 			StartBrowser.webdriver.findElement(By.xpath("//*[@id='react-root']/section/nav/div[2]/div/div/div[3]/div/div[3]/a")).click();
-			Thread.sleep(1000);
+			StartBrowser.webdriver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 			StartBrowser.webdriver.findElement(By.xpath("//*[@id='react-root']/section/main/div/header/section/div[1]/div/button/span")).click();
-			Thread.sleep(1000);
+			StartBrowser.webdriver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 			StartBrowser.webdriver.findElement(By.xpath("/html/body/div[3]/div/div/div/div/button[6]")).click();
 			System.out.println("////////You have been logged out////////");
 		}else {

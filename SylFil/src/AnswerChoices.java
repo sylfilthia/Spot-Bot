@@ -1,12 +1,7 @@
 import java.util.Scanner;
 public class AnswerChoices {
 
-	static Login login = new Login();
-	static Logout logout = new Logout();
-	static FollowFeature followfeature = new FollowFeature();
-	static StartBrowser startbrowser = new StartBrowser();
-	static Exit exit = new Exit();
-	static Like like = new Like();
+
 	
 	static Scanner keyboard = new Scanner(System.in);
 	
@@ -15,11 +10,11 @@ public class AnswerChoices {
 		String answer = keyboard.next();
 		
 		if (answer.equals ("2")){
-			followfeature.following();
+			FollowFeature.following();
 		}
 		
 		if (answer.equals ("5")){
-			logout.AutomaticLogout();
+			Logout.AutomaticLogout();
 		}
 			
 		if (answer.equals("3")) {
@@ -33,7 +28,7 @@ public class AnswerChoices {
 			System.out.println("The Post feature has not been implemented yet.");
 		}
 		if (answer.equals("1")){
-			like.likeposts();
+			Like.likeposts();
 		}
 		else {
 			System.out.println("Invalid command.");
