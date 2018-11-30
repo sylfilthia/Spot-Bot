@@ -28,7 +28,9 @@ public class Login {
 		//Inputs the login info and submits
 		StartBrowser.webdriver.get("https://www.instagram.com/accounts/login");
 		StartBrowser.webdriver.findElement(By.name("username")).sendKeys(username);
+		Thread.sleep(1000);
 		StartBrowser.webdriver.findElement(By.name("password")).sendKeys(password);
+		Thread.sleep(1000);
 		StartBrowser.webdriver.findElement(By.name("password")).submit();
 		StartBrowser.webdriver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 		StartBrowser.webdriver.findElement(By.xpath("//*[@id='react-root']/section/main/div/button")).click();
